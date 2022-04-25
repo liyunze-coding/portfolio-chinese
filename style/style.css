@@ -162,25 +162,6 @@ h4 {
 	font-family: "montserrat-bold";
 }
 
-#website-redirect{
-	position:absolute;
-	margin:0;
-	padding:0;
-	left:15px;
-	top:15px;
-	font-size:15px;
-}
-
-#website-link{
-	text-decoration: none;
-	color:#545454;
-}
-
-#website-link:hover{
-	text-decoration: underline;
-	color:#7c7c7c;
-}
-
 @media screen and (max-width: 1000px) {
 	nav {
 		font-size: 20px;
