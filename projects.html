@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style/style.css'>
+        <link rel="shortcut icon" type="image/jpg" href="static/images/logo.jpg"/>
+        <meta name='author' content="Ryan">
+        <meta name="description" content= "Some of the projects I've made in the past, all available on github">
+        <meta name="robots" content= ", follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
+        <script src="scripts/preloader.js"></script>
+        <script src="scripts/scrolling.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6ST10QSZH');
+            window.onbeforeunload = function (){
+                window.scrollTo(0, 0);
+            }
+
+            console.log(`五分之四的Projects都是PIL和OpenCV.......`);
+            
+            $(window).on('load', async function(){
+                disableScroll();
+                await move('loader');
+                $(".loader-wrapper").fadeOut('slow');
+            });
+
+            $(window).click(async function(){
+                enableScroll();
+                $('#clickToContinue').fadeOut('fast');
+            });
+        </script>
+        <title>项目</title>
+        <style>
+            #clickToContinue{
+                display:flex;
+                position:fixed;
+                background-color:#141414;
+                color:#f1f1f1;
+                width:100%;
+                height:100%;
+                z-index:3;
+                opacity:0.95;
+                margin: 0 auto;
+            }
+            #click-text{
+                top:40%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                font-family:'montserrat-bold';
+                font-size:40px;
+                position:absolute;
+            }
+
+            .project-box {
+                position:relative;
+                margin: 0 auto;
+                border: 2px solid #505050;
+                border-radius:5px;
+                color:#fafafa;
+                background-color: #303030;
+                padding-left:15px;
+                padding-right:15px;
+            }
+
+            .project-section{
+                display: grid;
+                grid-column: 2;
+                grid-template-columns: 1fr 1fr;
+                row-gap:50px;
+                column-gap:20px;
+                margin: auto;
+                width: 90%;
+            }
+
+            .project-icon{
+                width:90%; 
+                position:relative;
+                border-radius:10px;
+                overflow: hidden; 
+                display:block;
+                margin:0 auto;
+            }
+            .project-description{
+                width:95%;
+                padding-left:10px;
+                font-size:20px;
+                letter-spacing: 0.05em;
+            }
+
+            .tags{
+                position: absolute;
+                bottom:10px;
+                height:25px;
+                padding-left:10px;
+                line-height:2em;
+                margin-bottom:10px;
+            }
+
+            .tag{
+                font-size:12px;
+                border:solid 2px #505050;
+                padding:5px;
+                border-radius:10px;
+            }
+
+            .tag:hover{
+                background-color:#505050;
+                color:#e9e9e9;
+            }
+
+            .english-text{
+                font-size:18px;
+                letter-spacing: normal;
+            }
+
+
+
+            h4{
+                font-size:20px;
+                font-family:'montserrat-bold';
+                padding-left:10px;
+            }
+
+            @media screen and (max-width: 900px){
+                .project-section {
+                    grid-template-columns: 1fr;
+                }
+                #click-text{
+                    font-size:25px;
+                    white-space: nowrap;
+                }
+                .project-box{
+                    height:fit-content;
+                }
+                .tags{
+                    position:relative;
+                    height:fit-content;
+                }
+            }
+        </style>
+    </head>
+    <body oncontextmenu="return false;">
+        <div id='clickToContinue'>
+            <div id='click-text'>Click here to continue</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href='./'>主页</a></li>
+                <li><a href='./about.html'>关于</a></li>
+                <li><a href='./skills.html'>技能</a></li>
+                <li><a href class='active'>项目</a></li>
+            </ul>
+        </nav>
+        <div class='project-section'>
+            <div class='project-box'>
+                <h4>猩猩测试机器人</h4>
+                <a href="https://github.com/liyunze-coding/human-benchmark-bots/tree/master/chimp_test" target='_blank'>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='project-icon'>
+                        <source src='./static/videos/chimp_test.mov'>
+                    </video>
+                </a>
+                
+                <p class='project-description'>
+                    这机器人可以在‘人体基准’的猩猩测试中破纪录。使用<span class="english-text">PIL</span>, <span class="english-text">OpenCV</span>处理影像，<span class="english-text">PyAutoGUI</span>来鼠标点击。
+                </p>
+                <br><br>
+                <div class='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>PIL</span>
+                    <span class='tag'>OpenCV</span>
+                    <span class='tag'>PyAutoGUI</span>
+                </div>
+            </div>
+            <div class='project-box'>
+                <h4>视觉记忆力测试机器人</h4>
+                <a href="https://github.com/liyunze-coding/human-benchmark-bots/tree/master/visual_memory" target='_blank'>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='project-icon'>
+                        <source src='./static/videos/visual_memory_demo.mov'>
+                    </video>
+                </a>
+                
+                <p class='project-description'>
+                    这机器人可以在‘人体基准’的视觉记忆力测试破纪录。使用<span class="english-text">PIL</span>, <span class="english-text">OpenCV</span>处理影像，以及<span class="english-text">PyAutoGUI</span>来鼠标点击。
+                </p>
+                <br><br>
+                <div class='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>PIL</span>
+                    <span class='tag'>OpenCV</span>
+                    <span class='tag'>PyAutoGUI</span>
+                </div>
+            </div>
+            <div class='project-box'>
+                <h4>语言记忆力测试机器人</h4>
+                <a href="https://github.com/liyunze-coding/Trigger-Me-Elmo-2" target='_blank'>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='project-icon'>
+                        <source src='./static/videos/verbal_memory.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    这机器人可以在‘人体基准’的语言记忆力测试中破纪录。使用<span class="english-text">Selenium</span>拿取显示的词语和按键。
+                </p>
+                <br><br>
+                <div class='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>Selenium</span>
+                </div>
+            </div>
+            <div class='project-box'>
+                <h4>西洋棋机器人</h4>
+                <a href="https://github.com/liyunze-coding/chess-playing-bot-v2" target='_blank'>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='project-icon'>
+                        <source src='./static/videos/chess_bot_demo.mov'>
+                    </video>
+                </a>
+                
+                <p class='project-description'>
+                    这个机器人可以在<span class="english-text">lichess</span>上应付任何对手。使用<span class="english-text">OpenCV</span>的模板匹配，<span class="english-text">python-chess</span>来判断最好的举动和<span class="english-text">PyAutoGUI</span>来鼠标点击。
+                </p>
+                <br><br>
+                <div class='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>PIL</span>
+                    <span class='tag'>OpenCV</span>
+                    <span class='tag'>PyAutoGUI</span>
+                    <span class='tag'>chess</span>
+                </div>
+            </div>
+            <div class='project-box'>
+                <h4>打字测试机器人</h4>
+                <a href="https://github.com/liyunze-coding/monkey-type-bot" target='_blank'>
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='project-icon'>
+                        <source src='./static/videos/monkeytype.mov'>
+                    </video>
+                </a>
+                <p class='project-description'>
+                    这个机器人在<span class="english-text">Monkey Type</span>网站上可以达到600-700字。使用<span class="english-text">OpenCV</span>处理影像，<span class="english-text">PyTesseract</span>的<span class="english-text">OCR</span>功能来拿取显示的字，还有<span class="english-text">PyAutoGUI</span>来打字。
+                </p>
+                <br><br>
+                <div class='tags'>
+                    <span class='tag'>Python</span>
+                    <span class='tag'>PIL</span>
+                    <span class='tag'>OpenCV</span>
+                    <span class='tag'>PyAutoGUI</span>
+                    <span class='tag'>PyTesseract</span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-wrapper">
+            <img src='static/images/logo.jpg' class='loader-image'>
+            <span class="loader"><span class="loader-inner" id='loader'></span></span>
+        </div>
+    </body>
+</html>

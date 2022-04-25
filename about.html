@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style/style.css'>
+        <link rel="shortcut icon" type="image/jpg" href="static/images/logo.jpg"/>
+        <meta name='author' content="Ryan">
+        <meta name="description" content= "Some information about my background and myself">
+        <meta name="robots" content= ", follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src='https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js'></script>
+        <script src='scripts/contact.js'></script>
+        <script src="scripts/preloader.js"></script>
+        <script src="scripts/scrolling.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ST10QSZH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6ST10QSZH');
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+            console.log('这作者好自恋啊......写来写去，只是写自己而已')
+
+            $(window).on('load', async function(){
+                disableScroll();
+                await move('loader');
+                let date = new Date();
+                let year = date.getFullYear();
+                let age = year - 2004;
+
+                document.getElementById('age').innerText = age;
+                $(".loader-wrapper").fadeOut('fast');
+                enableScroll();
+            });
+        </script>
+        <title>关于</title>
+        <style>
+            
+            input[type=text], select, textarea {
+                width: 100%;
+                padding: 12px; 
+                border: 1px solid #ccc; 
+                border-radius: 4px;
+                box-sizing: border-box; 
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical; 
+                background-color: #202020;
+                color:#fafafa;
+            }
+
+            input[type=submit] {
+                background-color: #4CAF50;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            input{
+                font-family:'montserrat';
+            }
+
+            .container {
+                color:#ccc;
+                font-family:'montserrat';
+            }
+            .card{
+                margin:auto;
+                line-height:15px;
+                width:80%;
+                font-size:20px;
+                letter-spacing: 0.05em;
+            }
+
+            .english-text{
+                font-size:18px;
+                letter-spacing: normal;
+            }
+
+            #yt-vid{
+                text-decoration: underline;
+                color:#fafafa;
+            }
+            
+            #pfp{
+                width:300px;
+                border:3px solid #505050;
+                border-radius:20px;
+            }
+
+            @media screen and (max-width: 700px){
+                .card{
+                    width:95%;
+                }
+                #pfp{
+                    width:280px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href='./'>主页</a></li>
+                <li><a href  class='active'>关于</a></li>
+                <li><a href='./skills.html'>技能</a></li>
+                <li><a href='./projects.html'>项目</a></li>
+            </ul>
+        </nav>
+        <div class='card'>
+            <img src='static/images/IMG_20210220_224031.jpg' id='pfp'>
+            <h1>你好，我是Ryan！</h1>
+            <br>
+            <p style='font-family:montserrat;line-height: 1.2em;'>
+                我今年<span id='age'></span>岁，位于亚洲.
+                <br><br>
+                我13岁的时候，我的父母送我去学电脑编程<span class="english-text">(Programming)</span>。
+                <br><br>
+                我一开始学编程的时候，我没那么兴趣因为我只学会用Python来画些形状，学些简单的概念。
+                学了几个月后，开始闷了。
+                <br><br>
+                有一天，我发现到编程不一定要那么闷。我可以自己上网找些资源，自由地选择我要学的东西。从那天以后，我开始对编程有兴趣。
+                <br><br>
+                我学会一些影像处理<span class="english-text">(image processing)</span>，自动化<span class="english-text">(automation)</span>和网页设计<span class="english-text">(web design)</span>。
+                <br><br>
+                我一开始学<span class="english-text">Javascript</span>是因为我有位顾客要一个<span class="english-text">Discord bot</span>，所以我花了三天学会了那个语言，然后开始打工。
+                还有，因为这个<a id='yt-vid' href='https://youtu.be/BZqzhmlTkAc' target='_blank'><span class="english-text">Youtube</span>视频</a>，我开始对网页设计有兴趣。
+                <br><br>
+                在中学时，大多数学生都知道我对编程有兴趣。我在那间学校除了当了电脑技术俱乐部的总统以外，还当了级长部的电脑技术经理。
+                在那里，我学会了如何组织活动，与同事沟通和团队合作的重要性。
+                <br><br>
+                我会尽力地学会更多东西，学会当一名有资格的编程员。
+            </p>
+            <br>
+            <h3>联络</h3>
+            <div class="container" style='width:80%; position:absolute;'>
+            <form action='https://formspree.io/f/xgerwrwj' method='POST'>
+            
+            <label for="name">名字<span style='color:red'>*</span></label>
+            <input type="text" name="name" class="name" placeholder="名字">
+            
+            <label for="email">电邮<span style='color:red'>*</span></label>
+            <input type="text" name="email" class="email" placeholder="电邮">
+
+            <label for="subject">科目</label>
+            <input type="text" name="subject" class="subject" placeholder="科目">
+            
+            <label for="Message">信息<span style='color:red'>*</span></label>
+            <textarea id="message" name='message' class='message' placeholder="写些东西。。。" style="height:200px;font-family:montserrat"></textarea>
+            
+            <input type="submit" value="提交" class='submit' style='color:white;'>
+            <br><br>
+            <div class='status' style='color:red;font-size:smaller'></div>
+            </form>
+            <br><br>
+            </div>
+        </div>
+        <br>
+        <div class="loader-wrapper">
+            <img src='static/images/logo.jpg' class='loader-image'>
+            <span class="loader"><span class="loader-inner" id='loader'></span></span>
+        </div>
+    </body>
+</html>
