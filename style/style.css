@@ -74,9 +74,13 @@ nav li {
 	position: relative;
 }
 
+nav li:first-child {
+    position:absolute;
+    left:0px; /* Match your padding on <ul> */
+}
+
 nav a {
 	text-decoration: none;
-	text-transform: uppercase;
 	color: #d8d8d8;
 }
 
@@ -156,6 +160,25 @@ h2,
 h3,
 h4 {
 	font-family: "montserrat-bold";
+}
+
+#website-redirect{
+	position:absolute;
+	margin:0;
+	padding:0;
+	left:15px;
+	top:15px;
+	font-size:15px;
+}
+
+#website-link{
+	text-decoration: none;
+	color:#545454;
+}
+
+#website-link:hover{
+	text-decoration: underline;
+	color:#7c7c7c;
 }
 
 @media screen and (max-width: 1000px) {
